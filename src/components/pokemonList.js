@@ -24,7 +24,7 @@ class List extends Component {
     .then(data => {
       if (data) {
         this.setState({pokemons : data.results}, () => {
-          this.state.pokemons.map(pokemon => {
+          this.state.pokemons.map(pokemon => (
             fetch(pokemon.url)
             .then(response => response.json())
             .then(data => {
@@ -35,7 +35,7 @@ class List extends Component {
               }            
             })
             .catch(console.log)
-          })
+          ))
         })        
       }
     })
